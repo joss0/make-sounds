@@ -4,4 +4,4 @@ I've also written a script to get the frequencies for all the notes in the midi 
 
 
 
-[Based on a script by Steve Mould link](https://gist.github.com/joss0/a1916d2eeebbc09c7c39e0a1f379ed92)
+###Based on a script by [Steve Mould](https://gist.github.com/joss0/a1916d2eeebbc09c7c39e0a1f379ed92)
