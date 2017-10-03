@@ -1,14 +1,20 @@
 let audioCtx = new (window.AudioContext || window.webkitAudioContext)()
 let oscillatorNode = audioCtx.createOscillator()
 let gainNode = audioCtx.createGain()
+
+// initial vals
 let mute = true
 let frequency = 440
 let direction = ""
 let volume = 0.8
+
+// detune rate
 let speed = 1
 let grossTune = 5
 let mediumTune = 0.5
 let fineTune = 0.05
+
+// key bindings
 let keys = [
   {key:81, direction:"down", tune:grossTune}, //q
   {key:87, direction:"up", tune:grossTune},   //w
