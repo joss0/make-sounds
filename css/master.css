@@ -1,3 +1,31 @@
-#frequency{
-  background-color: lightBlue;
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background-color: #fff;
+}
+
+section{
+  height: 10vh;
+  border-bottom: 1px solid #dd3;
+  display: grid;
+  align-content: center;
+}
+
+.nav{
+  display: grid;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+.link{
+  background-color: #dd3;
+  width: 100vw;
+}
+
+span{
+  font-size: 2em;
+  color: #041d33;
 }

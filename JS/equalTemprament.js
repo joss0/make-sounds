@@ -20,5 +20,3 @@ let loopArr = (len, pos)=> {
 }
 
 let freqFactory = f=> n=> f*(Math.pow(Math.pow(2, 1/12), n))
-
-let freq = freqFactory(440)

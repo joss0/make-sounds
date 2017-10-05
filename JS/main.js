@@ -3,9 +3,10 @@ let oscillatorNode = audioCtx.createOscillator()
 let gainNode = audioCtx.createGain()
 
 // initialise vals
-let mute = false
+let mute = true
 let note = 57 // MIDI note A4
 let volume = 0.5
+let freq = 440
 
 let controllerArr = [
   {keyCode: 65, interval: {value: -12, name:'octave'}},
@@ -59,12 +60,47 @@ let load = ()=> {
   oscillatorNode.connect(gainNode)
   gainNode.connect(audioCtx.destination)
   oscillatorNode.frequency.value = 440
-  gainNode.gain.value = volume
+  gainNode.gain.value = 0
   oscillatorNode.start()
   noteNum.innerHTML = 57
   frequency.innerHTML = 440
-  noteName.innerHTML = "A"
+  noteName.innerHTML = 'A'
+  tuning.innerHTML = 440
+  hash()
 }
 
-document.onload = load()
+let hash = ()=> {
+  if(window.location.hash === '') return
+  let hashArr = window.location.hash.split('/')
+  if(hashArr[0] === '' || hashArr[0] === 0) {
+    hashArr = ['reverted to default', 440]
+  }
+  let args = []
+  for (let i = 1; i < hashArr.length; i++) {
+    args.push(hashArr[i])
+  }
+  newHashAddress(args)
+}
+
+let newHashAddress = (...args)=> {
+  let newA = parseInt(args[0])
+  changeTuning(newA)
+}
+
+let changeTuning = (newA)=> {
+  freq = freqFactory(newA)
+
+  noteNum.innerHTML = note = 57
+
+  noteName.innerHTML = 'A'
+
+  frequency.innerHTML = oscillatorNode.frequency.value = newA
+
+  tuning.innerHTML = newA
+}
+
 document.addEventListener('keydown', keydownEventHandler)
+
+window.onhashchange = hash
+
+window.onload = load

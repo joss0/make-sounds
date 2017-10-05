@@ -5,10 +5,19 @@
   <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
-  <div>Frequency: <span id="frequency"></span></div>
-  <div>Note number: <span id="noteNum"></span></div>
-  <div>Note name: <span id="noteName"></span></div>
-  <script type="text/javascript" src="JS/main.js"></script>
+<div class="grid">
+  <section class="nav">
+    <a href="#/432"><div class="link">A = 432</div></a>
+    <a href="#/440"><div class="link">A = 440</div></a>
+    <a href="#/450"><div class="link">A = 450</div></a>
+    <a href="#/500"><div class="link">A = 500</div></a>
+  </section>
+  <section class="tuning">A is tuned to: <span id="tuning"></span></section>
+  <section class="frequency">Frequency: <span id="frequency"></span></section>
+  <section class="noteNum">Note number: <span id="noteNum"></span></section>
+  <section class="noteName">Note name: <span id="noteName"></span></section>
   <script type="text/javascript" src="JS/equalTemprament.js"></script>
+  <script type="text/javascript" src="JS/main.js"></script>
+</div>
 </body>
 </html>
